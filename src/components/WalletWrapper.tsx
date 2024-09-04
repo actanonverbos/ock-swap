@@ -15,17 +15,22 @@ import {
   WalletDropdownFundLink,
   WalletDropdownLink,
 } from '@coinbase/onchainkit/wallet';
+import { useCapabilities } from 'wagmi/experimental';
 
 type WalletWrapperParams = {
   text?: string;
   className?: string;
   withWalletAggregator?: boolean;
 };
+
 export default function WalletWrapper({
   className,
   text,
   withWalletAggregator = false,
 }: WalletWrapperParams) {
+  const { data: capabilities } = useCapabilities();
+  const hasMagicSpend = capabilities?.[8453]?.auxiliaryFunds?.supported;
+
   return (
     <>
       <Wallet>
@@ -48,7 +53,11 @@ export default function WalletWrapper({
           <WalletDropdownLink icon="wallet" href="https://wallet.coinbase.com">
             Go to Wallet Dashboard
           </WalletDropdownLink>
-          <WalletDropdownFundLink />
+          <WalletDropdownFundLink
+            text="Fund Wallet"
+            openIn="popup"
+            popupSize="md"
+          />
           <WalletDropdownDisconnect />
         </WalletDropdown>
       </Wallet>
