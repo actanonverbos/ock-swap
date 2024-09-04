@@ -13,7 +13,7 @@ export default function Footer() {
             title="Miggles"
             className="font-semibold hover:text-indigo-600"
           >
-            Miggles 💙
+            Miggles <span role="img" aria-label="blue heart">💙</span>
           </a>
         </h3>
       </aside>
