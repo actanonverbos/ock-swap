@@ -11,7 +11,7 @@ export default function Page() {
   const { address } = useAccount();
 
   return (
-    <div className="flex h-full w-96 max-w-full flex-col px-1 md:w-[1008px]">
+    <div className="flex min-h-screen w-96 max-w-full flex-col px-1 md:w-[1008px]">
       <section className="mt-6 mb-6 flex w-full flex-col md:flex-row">
         <div className="flex w-full flex-row items-center justify-between gap-2 md:gap-0">
           <Image
@@ -26,7 +26,7 @@ export default function Page() {
           </div>
         </div>
       </section>
-      <section className="templateSection flex w-full flex-col items-center justify-center gap-4 rounded-xl bg-blue-100 px-2 py-4 md:grow">
+      <section className="templateSection flex flex-grow w-full flex-col items-center justify-center gap-4 rounded-xl bg-blue-100 px-2 py-4">
         {!address && (
           <>
             <video width="80" height="80" autoPlay loop muted playsInline className="mb-4">

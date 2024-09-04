@@ -19,12 +19,16 @@ export const viewport = {
 };
 
 export const metadata: Metadata = {
-  title: 'Onchain App Template',
-  description: 'Built with OnchainKit',
+  title: 'Miggles Swap',
+  description: 'Swap your tokens with Miggles',
   openGraph: {
-    title: 'Onchain App Template',
-    description: 'Built with OnchainKit',
-    images: [`${NEXT_PUBLIC_URL}/vibes/vibes-19.png`],
+    title: 'Miggles Swap',
+    description: 'Swap your tokens with Miggles',
+    images: [`${NEXT_PUBLIC_URL}/miggles-logo.png`],
+  },
+  icons: {
+    icon: '/miggles-logo.png',
+    apple: '/miggles-logo.png',
   },
 };
 
