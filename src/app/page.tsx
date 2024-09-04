@@ -27,14 +27,18 @@ export default function Page() {
         </div>
       </section>
       <section className="templateSection flex w-full flex-col items-center justify-center gap-4 rounded-xl bg-blue-100 px-2 py-4 md:grow">
-        {address ? (
-          <SwapComponent />
-        ) : (
-          <WalletWrapper
-            className="w-[450px] max-w-full bg-[#0052FF] text-white hover:bg-[#0039B3]"
-            text="Sign in to swap"
-          />
+        {!address && (
+          <>
+            <h1 className="text-7xl font-bold text-center mb-4">
+              $MIGGLES SWAP
+            </h1>
+            <WalletWrapper
+              className="w-[450px] max-w-full bg-[#0052FF] text-white hover:bg-[#0039B3]"
+              text="Connect Wallet"
+            />
+          </>
         )}
+        {address && <SwapComponent />}
       </section>
       <Footer />
     </div>
