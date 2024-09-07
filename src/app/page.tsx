@@ -18,7 +18,7 @@ export default function Page() {
           alt="Miggles Logo"
           width={40}
           height={40}
-          className="rounded-full"
+          className="rounded-full float-animation"
         />
         <div className="flex items-center gap-3">
           <SignupButton />
@@ -40,13 +40,13 @@ export default function Page() {
               </p>
               <div className="flex justify-center">
                 <WalletWrapper
-                  className="w-full max-w-xs py-3 bg-blue-500 hover:bg-blue-600 text-white font-bold rounded-lg transition duration-300"
+                  className="w-full max-w-xs py-3 bg-blue-500 hover:bg-blue-600 text-white font-bold rounded-lg transition duration-300 subtle-pulse-animation"
                   text="Connect Wallet"
                 />
               </div>
             </div>
           ) : (
-              <div className="w-full bg-white/10 backdrop-blur-md rounded-2xl p-6 shadow-xl">
+              <div className="w-full bg-white/10 backdrop-blur-md rounded-2xl p-6 shadow-xl shimmer relative">
                 <SwapComponent />
               </div>
           )}

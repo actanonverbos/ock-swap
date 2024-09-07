@@ -37,7 +37,7 @@ export default function RootLayout({
 }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className="min-h-screen w-full flex flex-col bg-gradient-to-br from-blue-900 to-purple-900">
+      <body className="min-h-screen w-full flex flex-col bg-gradient-to-br from-blue-500 via-blue-400 to-blue-300 bg-stars">
         <OnchainProviders>{children}</OnchainProviders>
       </body>
     </html>
