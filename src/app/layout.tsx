@@ -37,7 +37,7 @@ export default function RootLayout({
 }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className="flex items-center justify-center">
+      <body className="min-h-screen w-full flex flex-col bg-gradient-to-br from-blue-900 to-purple-900">
         <OnchainProviders>{children}</OnchainProviders>
       </body>
     </html>

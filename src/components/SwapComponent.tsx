@@ -33,7 +33,7 @@ export default function SwapComponent() {
 
   const swappableTokens: Token[] = [ETHToken];
   return address ? (
-    <Swap address={address}>
+    <Swap address={address} className="w-full">
       <SwapAmountInput
         label="Sell"
         swappableTokens={swappableTokens}
@@ -47,7 +47,7 @@ export default function SwapComponent() {
         token={MIGGLESToken}
         type="to"
       />
-      <SwapButton />
+      <SwapButton className="w-full" />
       <SwapMessage />
     </Swap> 
   ) : (

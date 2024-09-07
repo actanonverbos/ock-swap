@@ -11,42 +11,48 @@ export default function Page() {
   const { address } = useAccount();
 
   return (
-    <div className="flex min-h-screen w-96 max-w-full flex-col px-1 md:w-[1008px]">
-      <section className="mt-6 mb-6 flex w-full flex-col md:flex-row">
-        <div className="flex w-full flex-row items-center justify-between gap-2 md:gap-0">
-          <Image
-            src="/miggles-logo.png"
-            alt="Miggles Logo"
-            width={40}
-            height={40}
-          />
-          <div className="flex items-center gap-3">
-            <SignupButton />
-            {!address && <LoginButton />}
-          </div>
+    <div className="min-h-screen w-full flex flex-col">
+      <header className="p-4 flex justify-between items-center">
+        <Image
+          src="/miggles-logo.png"
+          alt="Miggles Logo"
+          width={40}
+          height={40}
+          className="rounded-full"
+        />
+        <div className="flex items-center gap-3">
+          <SignupButton />
+          {!address && <LoginButton />}
         </div>
-      </section>
-      <section className="templateSection flex flex-grow w-full flex-col items-center justify-center gap-4 rounded-xl bg-blue-100 px-2 py-4">
-        {!address && (
-          <>
-            <video width="80" height="80" autoPlay loop muted playsInline className="mb-4">
-              <source src="/miggles-animation.webm" type="video/webm" />
-              Your browser does not support the video tag.
-            </video>
-            <h1 className="text-5xl font-bold text-center mb-2">
-              $MIGGLES SWAP
-            </h1>
-            <p className="text-xl text-center mb-6 text-gray-600">
-              Connect your wallet or sign up to get started
-            </p>
-            <WalletWrapper
-              className="w-[450px] max-w-full bg-[#0052FF] text-white hover:bg-[#0039B3]"
-              text="Connect Wallet"
-            />
-          </>
-        )}
-        {address && <SwapComponent />}
-      </section>
+      </header>
+      
+      <main className="flex-grow flex items-center justify-center px-4 py-8">
+        <div className="w-full max-w-md mx-auto">
+          {!address ? (
+            <div className="text-center">
+              <video width="80" height="80" autoPlay loop muted playsInline className="mx-auto mb-6">
+                <source src="/miggles-animation.webm" type="video/webm" />
+                Your browser does not support the video tag.
+              </video>
+              <h1 className="text-4xl font-bold text-white mb-4">$MIGGLES SWAP</h1>
+              <p className="text-xl mb-8 text-blue-200">
+                Connect your wallet or sign up to get started
+              </p>
+              <div className="flex justify-center">
+                <WalletWrapper
+                  className="w-full max-w-xs py-3 bg-blue-500 hover:bg-blue-600 text-white font-bold rounded-lg transition duration-300"
+                  text="Connect Wallet"
+                />
+              </div>
+            </div>
+          ) : (
+              <div className="w-full bg-white/10 backdrop-blur-md rounded-2xl p-6 shadow-xl">
+                <SwapComponent />
+              </div>
+          )}
+        </div>
+      </main>
+      
       <Footer />
     </div>
   );
