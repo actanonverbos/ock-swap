@@ -30,10 +30,13 @@ export default function Page() {
         <div className="w-full max-w-md mx-auto">
           {!address ? (
             <div className="text-center">
-              <video width="80" height="80" autoPlay loop muted playsInline className="mx-auto mb-6">
-                <source src="/miggles-animation.webm" type="video/webm" />
-                Your browser does not support the video tag.
-              </video>
+              <Image
+                src="/miggles-logo.png"
+                alt="Miggles Logo"
+                width={80}
+                height={80}
+                className="mx-auto mb-6"
+              />
               <h1 className="text-4xl font-bold text-white mb-4">$MIGGLES SWAP</h1>
               <p className="text-xl mb-8 text-blue-200">
                 Connect your wallet or sign up to get started
